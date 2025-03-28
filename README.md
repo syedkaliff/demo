@@ -73,6 +73,45 @@ Modules Structure
 
 		Automatically registers instance with ALB
  
+
+	
+ *As necessary, make changes to the Main and Provider terraform files in the root directory for name and configuration.
+
+
+Install Docker on an EC2 Instance and Deploy a Dockerfile
+
+Prerequisites
+
+	An AWS EC2 instance (Amazon Linux 2, Ubuntu, or any other supported OS)
+
+	SSH access to the EC2 instance
+
+	Security group allowing inbound SSH (port 22) and necessary application ports
+
+	A Dockerfile for deployment
+
+Connect to Your EC2 Instance
+	ssh -i your-key.pem ec2-user@your-ec2-instance-ip
+
+Update the Package Repository
+	sudo yum update -y
+
+Install Docker
+	sudo yum install -y docker
+
+Start and Enable Docker Service
+	sudo systemctl start docker
+	sudo systemctl enable docker
+
+Build the Docker Image
+	copy Dockerfile to working dir (quest)
+	docker build -t quest .
+
+Run the Docker Container
+	docker run -d -p 3000:3000 quest
+
+Screenshots of the Output
+
 ![image](https://github.com/user-attachments/assets/e63d6fc3-d299-4c73-957a-ad5fbbc4c35b)
 
 ![image](https://github.com/user-attachments/assets/a7476a8e-3bf3-4a6b-abc0-f2cd80fa622d)
