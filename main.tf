@@ -33,11 +33,11 @@ module "aws_security" {
       self         = null
     },
     rule3 = {
-      from_port    = 8081
-      to_port      = 8081
+      from_port    = 3000
+      to_port      = 3000
       protocol     = "tcp"
-      cidr_blocks  = ["10.0.0.0/8"]
-      description  = "Workflow"
+      cidr_blocks  = ["0.0.0.0/0"]
+      description  = "App"
       source_sg_id = null
       self         = null
     }
