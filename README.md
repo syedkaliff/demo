@@ -49,13 +49,13 @@ Usage
 
 Modules Structure
 
-	modules/network
+	modules/vpc (network)
 
 		Creates VPC with subnets
 
 		Outputs VPC and subnet details
 
-	modules/security
+	modules/sg (Security Group)
 
 		Creates security groups
 
