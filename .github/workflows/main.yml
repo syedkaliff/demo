@@ -26,4 +26,4 @@ jobs:
     environment: test
     steps:
       - name: Apt update
-        run: terraform --version
+        run: cat /etc/os-release
