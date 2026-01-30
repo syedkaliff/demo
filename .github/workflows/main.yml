@@ -11,7 +11,7 @@ jobs:
       - name: python code
         run: echo "hello python"
 
-    name: update apt
+    
     steps:
       - name: apt os update
         run: sudo apt update -y
