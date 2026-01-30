@@ -1,33 +1,16 @@
-name: cicd multistage
-
+name: syed cicd
 on:
   push:
     branches:
-      - main
-
+      - main 
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-22.04
+  dev:
+    name: "deply in dev"
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Build
-        run: echo "build stage"
-
+      - run: echo "hello dev"
   test:
-    name: Test
-    runs-on: ubuntu-22.04
-    needs: build
-    steps:
-      - uses: actions/checkout@v4
-      - name: Test
-        run: echo "test stage"
-
-  deploy:
-    name: Deploy to staging
-    runs-on: ubuntu-22.04
-    needs: test
-    steps:
-      - uses: actions/checkout@v4
-      - name: Deploy
-        run: echo "deploy stage"
+    name: "test phase"
+    runs-on: ubuntu-latest
+    run: sudo apt update -y
+ 
