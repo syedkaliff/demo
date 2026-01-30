@@ -23,6 +23,7 @@ jobs:
     name: "terraform version"
     runs-on: ubuntu-latest
     needs: dev
+    environment: test
     steps:
       - name: Apt update
         run: terraform --version
