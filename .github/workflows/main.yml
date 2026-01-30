@@ -1,0 +1,12 @@
+name: cicd test
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  my_job:
+    name: deploy to staging
+    runs-on: ubuntu-22.04
+ - name: pyhton hello
+  uses: echo "hellow world"
