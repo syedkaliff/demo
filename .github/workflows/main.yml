@@ -1,18 +1,33 @@
-name: cicd test
-on:
- push:
-   branches: 
-     - main
-jobs:
-  test_job: 
-    name: deploy to staging
-    runs-on: ubuntu-latest
-    steps:
-      - name: python code
-        run: echo "hello python"
+name: cicd multistage
 
-    
-  
-      - name: apt os update
-        run: sudo apt update -y
-     
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: echo "build stage"
+
+  test:
+    name: Test
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test
+        run: echo "test stage"
+
+  deploy:
+    name: Deploy to staging
+    runs-on: ubuntu-22.04
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        run: echo "deploy stage"
