@@ -12,7 +12,7 @@ jobs:
         run: echo "hello python"
 
     
-    steps:
+  
       - name: apt os update
         run: sudo apt update -y
      
