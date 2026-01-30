@@ -1,17 +1,13 @@
 name: cicd test
-
 on:
-  push:
-    branches:
-      - main
-
+ push:
+   branches: 
+     - main
 jobs:
-  my_job:
+  test_job: 
     name: deploy to staging
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: python hello
-        run: echo "hello world"
+      - name: python code
+        run: echo "hello python"
+     
